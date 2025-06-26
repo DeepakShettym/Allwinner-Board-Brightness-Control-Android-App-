@@ -1,29 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="16dp"
-    android:id="@+id/main"
-    android:gravity="center">
+    android:gravity="center_vertical">
 
+    <!-- Row: Brightness Text + SeekBar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/brightnessValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brightness: 127"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:paddingEnd="16dp"/>
+
+        <SeekBar
+            android:id="@+id/brightnessSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:max="127"
+            android:progressDrawable="@android:color/darker_gray"
+            android:thumbTint="@android:color/black" />
+    </LinearLayout>
+
+    <!-- Light Intensity Display -->
     <TextView
-        android:id="@+id/brightnessValue"
+        android:id="@+id/intensityTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Brightness: 127"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        android:paddingEnd="16dp"/>
-
-    <SeekBar
-        android:id="@+id/brightnessSeekBar"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:layout_weight="1"
-        android:max="127"
-        android:progressDrawable="@android:color/darker_gray"
-        android:thumbTint="@android:color/black" />
+        android:text="Light Intensity: 0"
+        android:textSize="16sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
-
